@@ -1,0 +1,22 @@
+{% load doct_extras %}
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    {% if request.user %}
+
+    {% if request.user|has_group:"doctor" %}
+    <a href="#">Profile</a>
+    <a href="#">Appointment List</a>
+
+    {% elif request.user|has_group:"patient"  %}
+
+    <a href="#">Profile</a>
+    <a href="#">Search Doctor</a>
+    {% else %}
+    <a href="#">Profile</a>
+    {% endif %}
+
+
+
+    {% endif %}
+</div>

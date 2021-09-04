@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<h1>Update Doctor</h1>
+<!-- {% for f in form%}
+{{ f.label }}
+{{f}} <br>
+{% endfor %} -->
+
+<form action="" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary">Update</button>
+</form>
+{{ field.errors }}
+
+{% endblock %}
